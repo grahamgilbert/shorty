@@ -20,4 +20,4 @@ jobs:
           name: run linting
           command: |
             . venv/bin/activate
-            flake8
+            flake8 --max-line-length=100 ~/repo/shorty.py
