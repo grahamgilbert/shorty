@@ -1,0 +1,4 @@
+config.json
+output/*
+
+build_run.sh
