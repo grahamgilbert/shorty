@@ -1,13 +1,20 @@
 <html>
     <head>
         <script>
+setTimeout(performRedirect, 1000);
+var redirected = false;
+
+function performRedirect() {
+  if (!redirected) {
+    redirected = true;
+    window.location.replace("THEURL");
+  }
+}
 window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
 ga('create', 'GOOGLEID', 'auto');
 ga('send', 'pageview', {
-  'hitCallback': function() {
-    window.location.replace("THEURL");
-  }
-});     
+  hitCallback: performRedirect
+});
         </script>
     <script async src='https://www.google-analytics.com/analytics.js'></script>
     </head>
