@@ -71,6 +71,11 @@ def generate_html(config, output, googleanalytics):
     for item in config:
         build_redirect_item(item, template_string, output)
 
+    index_in = os.path.join(template_dir, 'index.html')
+    index_out = os.path.join(output, 'index.html')
+
+    shutil.copyfile(index_in, index_out)
+
 
 def main():
 
