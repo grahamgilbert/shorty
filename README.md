@@ -4,13 +4,8 @@ Shorty is a statically generated URL shortener. It is suggested that this is com
 
 ## Usage
 
-It is suggested that this is run via the Docker image, but it's only dependency is Python 3.
-
 ``` bash
-docker run --rm -ti \
-    -v `pwd`/output:/tmp/output \
-    -v `pwd`/config.json:/config.json \
-    grahamgilbert/shorty:latest /usr/local/bin/shorty \
+python3 shorty.py \
     --config=/config.json \
     --output=/tmp/output/site \
     --google-analytics='GA-ABC12343-Y'
