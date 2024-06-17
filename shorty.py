@@ -55,7 +55,8 @@ def generate_html(config, output, googleanalytics):
     """
     Builds the html
     """
-    template_dir = "templates"
+    curr_dir = os.path.dirname(os.path.abspath(sys.argv[0])) 
+    template_dir = os.path.join(curr_dir, "templates")
     ensure_dir(output)
     if googleanalytics:
         template = os.path.join(template_dir, "with_google.html")
