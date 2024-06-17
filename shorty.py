@@ -55,7 +55,7 @@ def generate_html(config, output, googleanalytics):
     """
     Builds the html
     """
-    template_dir = "/opt/shorty/templates"
+    template_dir = "templates"
     ensure_dir(output)
     if googleanalytics:
         template = os.path.join(template_dir, "with_google.html")
