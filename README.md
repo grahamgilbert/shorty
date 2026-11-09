@@ -33,3 +33,17 @@ python3 shorty.py \
 Use an empty string for `stub` to redirect the site root (`/`). If no root entry is
 configured, Shorty uses the default index page. Root redirects use the same
 template and optional analytics as other redirects.
+
+## Development
+
+Use the Python version series in `.python-version`. CI selects the latest stable
+patch release in that series. Shorty has no third-party runtime dependencies.
+Install the pinned lint dependencies before running the checks:
+
+``` bash
+python3 -m venv venv
+. venv/bin/activate
+python -m pip install --upgrade pip
+python -m pip install -r requirements-dev.txt
+./test.sh
+```

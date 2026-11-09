@@ -1,0 +1,4 @@
+flake8==7.5.0
+mccabe==0.7.0
+pycodestyle==2.15.0
+pyflakes==4.1.0
