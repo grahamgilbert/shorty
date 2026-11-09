@@ -45,7 +45,8 @@ def build_redirect_item(item, template_string, temp_directory):
         sys.exit(1)
 
     stub_dir = os.path.join(temp_directory, item["stub"])
-    os.makedirs(stub_dir)
+    if item["stub"] != "":
+        os.makedirs(stub_dir)
     template_string = template_string.replace("THEURL", item["url"])
     with open(os.path.join(stub_dir, "index.html"), "w") as html:
         html.write(template_string)
@@ -55,7 +56,7 @@ def generate_html(config, output, googleanalytics):
     """
     Builds the html
     """
-    curr_dir = os.path.dirname(os.path.abspath(sys.argv[0])) 
+    curr_dir = os.path.dirname(os.path.abspath(sys.argv[0]))
     template_dir = os.path.join(curr_dir, "templates")
     ensure_dir(output)
     if googleanalytics:
@@ -69,13 +70,13 @@ def generate_html(config, output, googleanalytics):
     if googleanalytics:
         template_string = template_string.replace("GOOGLEID", googleanalytics)
 
-    for item in config:
-        build_redirect_item(item, template_string, output)
-
     index_in = os.path.join(template_dir, "index.html")
     index_out = os.path.join(output, "index.html")
 
     shutil.copyfile(index_in, index_out)
+
+    for item in config:
+        build_redirect_item(item, template_string, output)
 
 
 def main():

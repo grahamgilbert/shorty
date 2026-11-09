@@ -16,6 +16,10 @@ python3 shorty.py \
 ``` json
 [
     {
+        "stub": "",
+        "url": "https://grahamgilbert.com/"
+    },
+    {
         "stub": "blog",
         "url": "https://grahamgilbert.com"
     },
@@ -25,3 +29,7 @@ python3 shorty.py \
     }
 ]
 ```
+
+Use an empty string for `stub` to redirect the site root (`/`). If no root entry is
+configured, Shorty uses the default index page. Root redirects use the same
+template and optional analytics as other redirects.
